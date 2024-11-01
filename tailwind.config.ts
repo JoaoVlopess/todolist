@@ -11,7 +11,8 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        'Inputcolor': '#EDEEF0',
+        'Inputcolor' : '#EDEEF0',
+        'purpleTheme' : '#9fa0ff'
       },
     },
   },
