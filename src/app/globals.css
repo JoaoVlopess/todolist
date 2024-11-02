@@ -7,15 +7,24 @@
 }
 
 .scroll_bar::-webkit-scrollbar-track {
-    background: #6d6ff6;
+    background: #999;
     border-radius: 5px;
 }
 
 .scroll_bar::-webkit-scrollbar-thumb {
-    background: #9fa0ff;
+    background: #ddd;
     border-radius: 5px;
 }
 
 .scroll_bar::-webkit-scrollbar-thumb:hover {
-    background: #9fa0ff;
+    background: #ccc;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
