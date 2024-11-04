@@ -45,7 +45,7 @@ const Page = () => {
 
   return (
     <div className="w-full h-screen bg-slate-800 flex  justify-center p-6">
-      <div className="w-full  my-7 border-2 rounded-3xl  text-black shadow shadow-black bg-white xs:max-w-sm sm:max-w-md md:max-w-lg xl:max-w-xl" >
+      <div className="w-full max-h-full  my-7 mx-4 border-2 rounded-3xl  text-black shadow shadow-black bg-white xs:max-w-sm sm:max-w-md md:max-w-lg xl:max-w-xl" >
 
         <div className="p-5 font-bold text-2xl  flex items-center justify-center ">TO DO LIST <img className="ml-3" src="assets/lista-de-tarefas (1).png" alt="" /></div>
 
