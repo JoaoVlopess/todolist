@@ -1,12 +1,24 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TodoItem } from "./types/TodoItem";
 import { IoMdClose } from "react-icons/io";
 
 const Page = () => {
   const [itemInput, setItemInput] = useState('');
   const [list, setList] = useState<TodoItem[]>([]);
+  const [placeholder, setPlaceholder] = useState('O que deseja fazer?');
+
+  useEffect(() => {
+    const updatePlaceholder = () => {
+      setPlaceholder(window.innerWidth < 490 ? 'Adicionar...' : 'O que deseja fazer?');
+    };
+
+    updatePlaceholder(); // Atualiza na montagem
+    window.addEventListener('resize', updatePlaceholder); // Atualiza na mudança de tamanho
+
+    return () => window.removeEventListener('resize', updatePlaceholder); // Limpa o evento
+  }, []);
 
   const handleAddButton = () => {
     if (itemInput.trim() !== '') {
@@ -40,7 +52,7 @@ const Page = () => {
         <div className="px-12 pb-7 text-xl border-b flex items-center ">
           <input
             type="text"
-            placeholder= {innerWidth < 490 ? 'Adicionar...' : 'O que deseja fazer?'}
+            placeholder= {placeholder}
             className="p-4 w-full h-full border-2 text-md border-black rounded-full mr-4 bg-Inputcolor"
             value={itemInput}
             onChange={e => setItemInput(e.target.value)}
