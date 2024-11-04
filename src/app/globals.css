@@ -28,3 +28,6 @@
     -ms-overflow-style: none; 
     scrollbar-width: none; 
   }
+  .maxheightxl{
+    max-height: 620px;
+  }

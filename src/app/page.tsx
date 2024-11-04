@@ -33,7 +33,7 @@ const Page = () => {
 
   return (
     <div className="w-full h-screen bg-slate-800 flex  justify-center p-6">
-      <div className="w-full  my-7 border-2 rounded-3xl  text-black shadow shadow-black bg-white xs:max-w-sm sm:max-w-md md:max-w-lg xl:max-w-xl" >
+      <div className="w-full max-h-full  my-7 border-2 rounded-3xl  text-black shadow shadow-black bg-white xs:max-w-sm sm:max-w-md md:max-w-lg xl:max-w-xl" >
 
         <div className="p-5 font-bold text-2xl  flex items-center justify-center ">TO DO LIST <img className="ml-3" src="assets/lista-de-tarefas (1).png" alt="" /></div>
 
@@ -56,7 +56,7 @@ const Page = () => {
         </div>
 
         <div className="w-full scroll_bar overflow-auto overflow-x-hidden"
-         style={{maxHeight: "620px"} }>
+        style={{ maxHeight: `calc(100vh - 280px)` }}>
           <ul className="px-5 text-x overflow-x-scroll whitespace-nowrap no-scrollbar">
 
             {list.map((item, index) => (
@@ -65,7 +65,7 @@ const Page = () => {
                   type="checkbox"
                   className="form-checkbox appearance-none border border-gray-400 h-5 w-5 mr-4 rounded-full shadow-md checked:bg-purpleTheme focus:outline-none cursor-pointer  transition-colors duration-300"
                   checked={item.checked}
-                  onClick={() => toggleItem(index)}
+                  onChange={() => toggleItem(index)}
                 />
                 <p
                   className={`text-xl ${item.checked === true ? "text-gray-400 line-through" : "text-black"}`}>{item.label}</p>
